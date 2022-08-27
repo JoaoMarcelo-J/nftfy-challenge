@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HTMLAttributes, useEffect, useState } from "react";
 
 //utils
@@ -33,11 +34,18 @@ export const NftCard = ({ tokenId, ...props }: NftCardProps) => {
 
   return (
     <S.NftCardContainer {...props}>
-      <img src={nftData.image} alt={nftData.name} />
-      <div>
+      <S.ImageContainer>
+        <Image
+          layout="fill"
+          // objectFit="contain"
+          src={nftData.image}
+          alt={nftData.name}
+        />
+      </S.ImageContainer>
+      <S.Content>
         <h2>{nftData.name}</h2>
         <p>{nftData.description.substring(0, 300)}...</p>
-      </div>
+      </S.Content>
     </S.NftCardContainer>
   );
 };

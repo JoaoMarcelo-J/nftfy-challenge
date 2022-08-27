@@ -77,7 +77,11 @@ const Home: NextPage = () => {
         <S.FeedbackMessageContainer>
           {error && account && !hash && <p>{error}</p>}
           {hash && (
-            <a target="_blank" href={`https://rinkeby.etherscan.io/tx/${hash}`}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://rinkeby.etherscan.io/tx/${hash}`}
+            >
               Transaction sent. View Your transaction at : <span>{hash}</span>
             </a>
           )}
